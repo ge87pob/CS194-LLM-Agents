@@ -13,7 +13,6 @@ def fetch_restaurant_data(restaurant_name: str) -> Dict[str, List[str]]:
     # {"Applebee's": ["The food at Applebee's was average, with nothing particularly standing out.", ...]}
     pass
 
-
 def calculate_overall_score(restaurant_name: str, food_scores: List[int], customer_service_scores: List[int]) -> Dict[str, float]:
     # TODO
     # This function takes in a restaurant name, a list of food scores from 1-5, and a list of customer service scores from 1-5
@@ -61,4 +60,3 @@ def main(user_query: str):
 if __name__ == "__main__":
     assert len(sys.argv) > 1, "Please ensure you include a query for some restaurant when executing main."
     main(sys.argv[1])
-    
