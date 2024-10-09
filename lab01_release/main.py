@@ -60,3 +60,5 @@ def main(user_query: str):
 if __name__ == "__main__":
     assert len(sys.argv) > 1, "Please ensure you include a query for some restaurant when executing main."
     main(sys.argv[1])
+
+
