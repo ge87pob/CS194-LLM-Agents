@@ -11,6 +11,8 @@ def fetch_restaurant_data(restaurant_name: str) -> Dict[str, List[str]]:
     # Example:
     # > fetch_restaurant_data("Applebee's")
     # {"Applebee's": ["The food at Applebee's was average, with nothing particularly standing out.", ...]}
+    
+    
     pass
 
 def calculate_overall_score(restaurant_name: str, food_scores: List[int], customer_service_scores: List[int]) -> Dict[str, float]:
@@ -36,7 +38,14 @@ def get_data_fetch_agent_prompt(restaurant_query: str) -> str:
 
 # Do not modify the signature of the "main" function.
 def main(user_query: str):
-    entrypoint_agent_system_message = "" # TODO
+    entrypoint_agent_system_message = """"
+    You are a helpful AI assistant that answers questions about restaurants.
+    When asked about a restaurant, you should suggest a function call to fetch_restaurant_data to get the reviews for that restaurant.
+    The function call should be in the following format:
+    fetch_restaurant_data("restaurant_name"), where restaurant_name is the name of the restaurant.
+
+    
+    """ # TODO
     # example LLM config for the entrypoint agent
     llm_config = {"config_list": [{"model": "gpt-4o-mini", "api_key": os.environ.get("OPENAI_API_KEY")}]}
     # the main entrypoint/supervisor agent
