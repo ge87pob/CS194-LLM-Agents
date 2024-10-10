@@ -16,6 +16,7 @@ def restore_prints() -> None:
     sys.stdout = sys.__stdout__
 
 def contains_num_with_tolerance(text: str, pattern: float, tolerance: float=0) -> bool:
+    # Note: the test will only match numbers that have 3 or more decimal places.
     nums = re.findall(r'\d*\.\d{3}', text)
     nums = [float(num) for num in nums]
     pattern_matches = [num for num in nums if abs(num - pattern) <= tolerance]
@@ -40,6 +41,10 @@ def public_tests():
             contents.append(f.read())
             
     restore_prints()
+
+    for i in contents:
+        print(i)
+
     num_passed = 0
     for i, content in enumerate(contents):
         if not contains_num_with_tolerance(content, query_results[i], tolerance=tolerances[i]):

@@ -1,0 +1,5 @@
+
+>>>>>>>> USING AUTO REPLY...
+Chat between agents:
+assistant: {'content': None, 'refusal': None, 'role': 'assistant', 'function_call': None, 'tool_calls': [{'id': 'call_3zCcamDlyi9ElyFQwW5D7C1F', 'function': {'arguments': '{"restaurant_name":"Taco Bell"}', 'name': 'fetch_restaurant_data'}, 'type': 'function'}]}
+----------------------------------------
